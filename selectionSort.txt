@@ -1,0 +1,14 @@
+{
+    int iter, count, count_of_max;
+    for ( count=0; count<N; count++ ) {
+       Perm[count] = count;
+    }
+
+    for ( iter=0; iter<N-1; iter++ ) {
+        for (count=1, count_of_max=0; count<N-iter; count++) {
+            if (V[Perm[count]] > V[Perm[count_of_max]])
+                count_of_max = count;
+        }
+        swap(Perm,count_of_max,N-iter-1);
+    }
+}

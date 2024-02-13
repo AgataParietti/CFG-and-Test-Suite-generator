@@ -1,0 +1,18 @@
+{
+    int l, r, pivot;
+    pivot = V[0];
+    l = 0;
+    r = N;
+    while ( l < r ) {
+          do {
+              r--;
+          }while ( V[r] > pivot && r > l );
+          if ( r != l ) {
+               do {
+                   l++;
+               } while ( V[l] <= pivot && l < r );
+               swap(V, l, r);
+          }
+    }
+    swap(V, l, 0);
+}

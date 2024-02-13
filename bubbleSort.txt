@@ -1,0 +1,18 @@
+{
+  int iter, count;
+  boolean swap_found;
+  for (count=0; count<N; count++) {
+     Perm[count] = count;
+  }
+  iter = 0;
+  do {
+      swap_found=FALSE;
+      for (count=0; count < N-iter-1; count++) {
+          if (V[Perm[count]] > V[Perm[count+1]]) {
+              swap(Perm, count, count+1);
+              swap_found = TRUE;
+          }
+      }
+      iter ++;
+  }while(swap_found==TRUE);
+}
